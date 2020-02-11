@@ -11,3 +11,7 @@ export const hasKeys = (subject: any) => typeof subject === 'object'
   : false
 export const toPairs = <T extends {}>(subject: KeyValuePair) => Object.entries<T>(subject)
 export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => Object.fromEntries(subject)
+export const clearObject = (subject: KeyValuePair) => fromPairs(
+    toPairs(subject).filter(([_ ,value]) => isDefined(value))
+)
+export const values = (subject: KeyValuePair) => toPairs(subject).map(([_, value]) => value)
