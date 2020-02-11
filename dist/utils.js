@@ -6,7 +6,5 @@ export const hasKeys = subject => typeof subject === 'object' ? Object.keys(subj
 export const toPairs = subject => Object.entries(subject);
 export const fromPairs = subject => Object.fromEntries(subject);
 export const isNil = subject => subject === null;
-
-const clearObject = subject => fromPairs(toPairs(subject).filter(([_, value]) => isDefined(value)));
-
-const values = subject => toPairs(subject).map(([_, value]) => value);
+export const clearObject = subject => fromPairs(toPairs(subject).filter(([_, value]) => isDefined(value)));
+export const values = subject => toPairs(subject).map(([_, value]) => value);
