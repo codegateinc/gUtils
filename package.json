@@ -1,4 +1,7 @@
 {
+  "name": "@codegateinc/g-utils",
+  "author": "@codegate",
+  "typings": "index.d.ts",
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
