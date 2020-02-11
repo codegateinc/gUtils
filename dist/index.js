@@ -1,1 +1,2 @@
-export * from './utils';
+import * as G from './utils';
+export { G };

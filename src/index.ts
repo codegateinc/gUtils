@@ -1,3 +1,5 @@
 import * as G from './utils'
 
-export * from './utils'
+export {
+  G
+}
