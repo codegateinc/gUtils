@@ -3,6 +3,8 @@ export namespace G {
     [key: string]: T
   }
 
+  type CondItem<S> = [(element: any) => boolean, () => S]
+
   export function isDefined(subject: any): boolean
   export function ifDefined<T = any>(subject: any, then: (subject: T) => void): T
   export function call(fn: Function): void
@@ -15,4 +17,5 @@ export namespace G {
   export function values<T extends {}>(subject: KeyValuePair): Array<T>
   export function always<T = any>(value: any): () => T
   export function is(type: any, subject: any): boolean
+  export function cond<T = any, S = any>(array: Array<CondItem<S>>): S
 }

@@ -1,4 +1,14 @@
 export const compose = (...functions) => firstArg => functions.reverse().reduce((acc, fn) => fn(acc), firstArg);
+export const cond = array => item => {
+  const matchedTuple = array.find(([condition, _]) => condition(item));
+
+  if (matchedTuple) {
+    const [_, resultFn] = matchedTuple;
+    return resultFn();
+  }
+
+  return undefined;
+};
 export const isDefined = subject => typeof subject !== 'undefined' && subject !== null;
 export const ifDefined = (subject, then) => isDefined(subject) && then(subject);
 export const call = fn => fn();

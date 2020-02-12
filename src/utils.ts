@@ -1,8 +1,20 @@
-import { KeyValuePair } from './types'
+import { KeyValuePair, CondItem } from './types'
 
 export const compose = (...functions: Array<Function>) => (firstArg?: any) => functions
   .reverse()
   .reduce((acc, fn) => fn(acc), firstArg)
+
+export const cond = <T = any, S = any>(array: Array<CondItem<S>>) => (item: T) => {
+    const matchedTuple = array.find(([condition, _]) => condition(item))
+
+    if (matchedTuple) {
+        const [_, resultFn] = matchedTuple
+
+        return resultFn() as S
+    }
+
+    return undefined
+}
 
 export const isDefined = (subject: any) => typeof subject !== 'undefined' && subject !== null
 export const ifDefined = <T = any>(subject: any, then: (subject: T) => void) => isDefined(subject) && then(subject)
