@@ -25,7 +25,7 @@ describe('cond', () => {
     })
 
     it('should return 3 when testItem not match', () => {
-        expect(testCond('c')).toBeTruthy()
+        expect(testCond('c')).toEqual(3)
     })
 
     it('should return undefined when not match', () => {
