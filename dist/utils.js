@@ -7,4 +7,4 @@ export const hasKeys = subject => typeof subject === 'object' ? Object.keys(subj
 export const toPairs = subject => Object.entries(subject);
 export const fromPairs = subject => Object.fromEntries(subject);
 export const clearObject = subject => compose(fromPairs, subject => toPairs(subject).filter(([_, value]) => isDefined(value)))(subject);
-export const values = subject => toPairs(subject).map(([_, value]) => value);
+export const values = subject => Object.values(subject);
