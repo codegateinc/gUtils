@@ -14,4 +14,4 @@ export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => Obj
 export const clearObject = (subject: KeyValuePair) => fromPairs(
     toPairs(subject).filter(([_ ,value]) => isDefined(value))
 )
-export const values = <T extends {}>(subject: KeyValuePair) => toPairs(subject).map(([_, value]) => <T>value)
+export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
