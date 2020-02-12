@@ -1,8 +1,6 @@
-export namespace G {
-  type KeyValuePair<T = any> = {
-    [key: string]: T
-  }
+import { CondItem, KeyValuePair } from './src/types'
 
+export namespace G {
   export function isDefined(subject: any): boolean
   export function ifDefined<T = any>(subject: any, then: (subject: T) => void): T
   export function call(fn: Function): void
@@ -15,4 +13,5 @@ export namespace G {
   export function values<T extends {}>(subject: KeyValuePair): Array<T>
   export function always<T = any>(value: any): () => T
   export function is(type: any, subject: any): boolean
+  export function cond<T = any, S = any>(array: Array<CondItem<S>>): S
 }
