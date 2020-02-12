@@ -23,5 +23,4 @@ export const clearObject = (subject: KeyValuePair) => compose(
     .filter(([_ ,value]) => isDefined(value))
 )(subject)
 
-export const values = (subject: KeyValuePair) => toPairs(subject)
-  .map(([_, value]) => value)
+export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
