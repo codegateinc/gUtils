@@ -10,6 +10,7 @@ export namespace G {
   export function hasKeys(subject: any): boolean
   export function toPairs<T extends {}>(subject: KeyValuePair): Array<[string, T]>
   export function fromPairs<T extends {}>(subject: Array<[string, any]>): T
+  export function compose<T = any>(...functions: Array<Function>): (firstArg?: any) => T
   export function clearObject(subject: KeyValuePair): KeyValuePair
   export function values<T extends {}>(subject: KeyValuePair): Array<T>
 }
