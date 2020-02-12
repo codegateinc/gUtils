@@ -3,8 +3,10 @@ export const isDefined = subject => typeof subject !== 'undefined' && subject !=
 export const ifDefined = (subject, then) => isDefined(subject) && then(subject);
 export const call = fn => fn();
 export const T = () => {};
+export const always = subject => () => subject;
 export const hasKeys = subject => typeof subject === 'object' ? Object.keys(subject).length > 0 : false;
 export const toPairs = subject => Object.entries(subject);
 export const fromPairs = subject => Object.fromEntries(subject);
 export const clearObject = subject => compose(fromPairs, subject => toPairs(subject).filter(([_, value]) => isDefined(value)))(subject);
 export const values = subject => Object.values(subject);
+export const is = (type, subject) => subject.constructor.name === type.name;

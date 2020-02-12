@@ -13,4 +13,6 @@ export namespace G {
   export function compose<T = any>(...functions: Array<Function>): (firstArg?: any) => T
   export function clearObject(subject: KeyValuePair): KeyValuePair
   export function values<T extends {}>(subject: KeyValuePair): Array<T>
+  export function always<T = any>(value: any): () => T
+  export function is(type: any, subject: any): boolean
 }

@@ -9,6 +9,7 @@ export const ifDefined = <T = any>(subject: any, then: (subject: T) => void) => 
 
 export const call = (fn: Function) => fn()
 export const T = () => {}
+export const always = <T>(subject: any) => () => <T>subject
 
 export const hasKeys = (subject: any) => typeof subject === 'object'
   ? Object.keys(subject).length > 0
@@ -24,3 +25,7 @@ export const clearObject = (subject: KeyValuePair) => compose(
 )(subject)
 
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
+
+export const is = (type: any, subject: any) => subject.constructor.name === type.name
+
+
