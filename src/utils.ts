@@ -10,7 +10,7 @@ export const cond = <T = any, S = any>(array: Array<CondItem<S>>) => (item: T) =
     if (matchedTuple) {
         const [_, resultFn] = matchedTuple
 
-        return resultFn() as S
+        return resultFn(item) as S
     }
 
     return undefined

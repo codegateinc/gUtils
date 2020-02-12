@@ -29,15 +29,19 @@ describe('cond', () => {
     })
 
     it('should return undefined when not match', () => {
-        expect(cond([
+        const testedCond = (testItem: string) => cond([
             [
                 testItem => testItem === 'a',
                 () => 1
-            ],
-            [
-                testItem => testItem === 'a' || testItem === 'b',
-                () => 2
             ]
-        ])('c')).toBeUndefined()
+        ])(testItem)
+
+        expect(testedCond('c')).toBeUndefined()
+    })
+
+    it('should return undefined when not match', () => {
+        const result = cond([])(123)
+
+        expect(result).toBeUndefined()
     })
 })

@@ -4,7 +4,7 @@ export const cond = array => item => {
 
   if (matchedTuple) {
     const [_, resultFn] = matchedTuple;
-    return resultFn();
+    return resultFn(item);
   }
 
   return undefined;
