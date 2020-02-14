@@ -3,7 +3,7 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -26,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit && yarn change-version"
+      "pre-commit": "concurrently 'yarn precommit' 'yarn change-version'"
     }
   },
   "babel": {
