@@ -8,7 +8,7 @@
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
-    "precommit": "yarn version --patch --no-git-tag-version && concurrently 'tsc' 'yarn test' 'yarn build'",
+    "precommit": "concurrently 'tsc' 'yarn test' 'yarn build'",
     "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored"
   },
   "devDependencies": {
@@ -25,7 +25,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit"
+      "pre-commit": "yarn precommit",
+      "post-commit": "yarn version --patch --no-verify"
     }
   },
   "babel": {
