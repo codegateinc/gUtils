@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "lib": ["es2020"],
-    "noEmit": true,
-    "module": "CommonJS"
+    "noEmit": true
   }
 }
