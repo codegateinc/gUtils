@@ -27,7 +27,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn precommit",
-      "post-commit": "console.log('asd')"
+      "post-commit": "yarn version"
     }
   },
   "babel": {
