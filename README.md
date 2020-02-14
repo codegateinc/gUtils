@@ -28,13 +28,13 @@ npm and yarn will be added soon :)
 |compose         |`(Array<Function>)`                                  |calls functions in reversed order 
 |cond            |`<T = any, S = any>(array: Array<CondItem<S>>)`      |replaces switch with array of conditions
 |isDefined       |`(subject: any)`                                     |check if given value is defined and not nullable
-|ifDefined       |`<T = any>(subject: any, then: (subject: T) => void)`|if given `subject` is defined calls `then` function
+|ifDefined       |`<T = any>(subject: any, then: (subject: T) => void)`|calls the function if predicate is defined
 |call            |`(fn: Function)`                                     |calls given `fn` function
 |T               |none                                                 |returns empty function
-|always          |`<T>(subject: any)`                                  |returns given `subject`
-|hasKeys         |`(subject: any)`                                     |checks if given `subject` has got any keys
-|toPairs         |`<T extends {}>(subject: {[key: string]: any})`      |returns Array of Array -> `[[key, value]]`
-|fromPairs       |`<T extends {}>(subject: Array<[string, any]>)`      |returns object made from Array of Arrays -> `{[key: string]: any}`
-|clearObject     |`(subject: {[key: string]: any})`                    |return object without `undefined` or `null` values
-|values          |`<T extends {}>(subject: {[key: string]: any})`      |returns Array of values
-|is              |`(type: any, subject: any)`                          |returns boolean value dependent if `subject` is typeof `type`
+|always          |`<T>(subject: any)`                                  |always returns given value
+|hasKeys         |`(subject: any)`                                     |checks if object has any keys
+|toPairs         |`<T extends {}>(subject: {[key: string]: any})`      |extracts object to array of key value tuple
+|fromPairs       |`<T extends {}>(subject: Array<[string, any]>)`      |returns object made from Array of key value tuple
+|clearObject     |`(subject: {[key: string]: any})`                    |clears object from nullable or undefined values
+|values          |`<T extends {}>(subject: {[key: string]: any})`      |returns object's values as Array
+|is              |`(type: any, subject: any)`                          |validates if give value has provided type
