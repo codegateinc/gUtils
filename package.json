@@ -3,14 +3,14 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
     "precommit": "concurrently 'tsc' 'yarn test' 'yarn build'",
     "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored",
-    "change-version": "yarn version --no-commit-hooks --patch"
+    "change-version": "yarn version --no-commit-hooks --amend --patch"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
