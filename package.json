@@ -8,8 +8,8 @@
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
-    "precommit": "concurrently 'tsc' 'yarn test' 'yarn build' && yarn version",
-    "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored"
+    "precommit": "concurrently 'tsc' 'yarn test' 'yarn build'",
+    "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored && yarn version"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
