@@ -25,7 +25,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit"
+      "pre-commit": "yarn precommit",
+      "post-commit": "yarn version --patch"
     }
   },
   "babel": {
