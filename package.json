@@ -3,7 +3,7 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.20",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -26,7 +26,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn precommit",
-      "post-commit": "yarn version --no-commit-hooks --patch "
+      "post-commit": "yarn version --patch--no-commit-hooks  "
     }
   },
   "babel": {
