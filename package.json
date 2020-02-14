@@ -8,7 +8,7 @@
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
-    "precommit": "concurrently 'tsc' 'yarn test' 'yarn build'",
+    "precommit": "yarn version --patch--no-commit-hooks && concurrently 'tsc' 'yarn test' 'yarn build'",
     "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored"
   },
   "devDependencies": {
