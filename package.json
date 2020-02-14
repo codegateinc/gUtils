@@ -3,12 +3,12 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
-    "precommit": "yarn version --new-version 0.0.2 && concurrently 'tsc' 'yarn test' 'yarn build'",
+    "precommit": "yarn version --new-version 0.0.3 && concurrently 'tsc' 'yarn test' 'yarn build'",
     "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored"
   },
   "devDependencies": {
