@@ -16,7 +16,7 @@ npm and yarn will be added soon :)
 ## Usage
 
 ```
-    import { G } from 'gUtils
+    import { G } from 'gUtils'
 
     G.is(String, 'test') -> this returns true
 ```
