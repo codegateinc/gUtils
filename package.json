@@ -25,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn version --no-commit-hooks --patch && yarn precommit"
+      "pre-commit": "yarn version --no-commit-hooks --no-git-tag-version --patch && yarn precommit"
     }
   },
   "babel": {
