@@ -27,6 +27,7 @@ export const hasKeys = (subject: any) => typeof subject === 'object'
   ? Object.keys(subject).length > 0
   : false
 
+
 export const toPairs = <T extends {}>(subject: KeyValuePair) => Object.entries<T>(subject)
 export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => Object.fromEntries(subject)
 
