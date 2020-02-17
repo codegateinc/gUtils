@@ -39,5 +39,3 @@ export const clearObject = (subject: KeyValuePair) => compose(
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
 
 export const is = (type: any, subject: any) => subject.constructor.name === type.name
-
-export const test = () => {}
