@@ -27,7 +27,6 @@ export const hasKeys = (subject: any) => typeof subject === 'object'
   ? Object.keys(subject).length > 0
   : false
 
-
 export const toPairs = <T extends {}>(subject: KeyValuePair) => Object.entries<T>(subject)
 export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => Object.fromEntries(subject)
 
@@ -40,3 +39,5 @@ export const clearObject = (subject: KeyValuePair) => compose(
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
 
 export const is = (type: any, subject: any) => subject.constructor.name === type.name
+
+export const test = () => {}
