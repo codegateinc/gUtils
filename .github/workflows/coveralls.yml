@@ -15,7 +15,7 @@ jobs:
       run: yarn
     
     - name: test
-      run: yarn test:cov
+      run: jest --coverage
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
