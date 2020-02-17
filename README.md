@@ -1,3 +1,5 @@
+## [![Coverage Status](https://coveralls.io/repos/github/codegateinc/gUtils/badge.svg?branch=master)](https://coveralls.io/github/codegateinc/gUtils?branch=master)
+
 # gUtils
 
 gUtils is a javascript library that contains functions to make your life simpler
