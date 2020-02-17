@@ -11,13 +11,8 @@ jobs:
 
     - uses: actions/checkout@v1
 
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-
-    - name: npm install
-      run: npm install
+    - name: install
+      run: yarn
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
