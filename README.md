@@ -28,7 +28,7 @@ npm and yarn will be added soon :)
 |    function    |                        props                        |               description               |
 |----------------|-----------------------------------------------------|-----------------------------------------|
 |compose         |`(Array<Function>)`                                  |calls functions in reversed order 
-|cond            |`<T = any, S = any>(array: Array<CondItem<S>>)`      |replaces switch with array of conditions
+|cond            |`<T = any, S = any>(array: Array<CondItem<T, S>>)`   |replaces switch with array of conditions
 |isDefined       |`(subject: any)`                                     |check if given value is defined and not nullable
 |ifDefined       |`<T = any>(subject: any, then: (subject: T) => void)`|calls the function if predicate is defined
 |call            |`(fn: Function)`                                     |calls given `fn` function
