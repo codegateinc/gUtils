@@ -13,6 +13,6 @@ export namespace G {
   export function values<T extends {}>(subject: KeyValuePair): Array<T>
   export function always<T = any>(value: any): () => T
   export function is(type: any, subject: any): boolean
-  export function cond<T = any, S = any>(array: Array<CondItem<S>>): (item: T) => S
+  export function cond<T = any, S = any>(array: Array<CondItem<T, S>>): (item: T) => S
   export function hasElements(subject: any): boolean
 }

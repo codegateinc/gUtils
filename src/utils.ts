@@ -4,7 +4,7 @@ export const compose = (...functions: Array<Function>) => (firstArg?: any) => fu
   .reverse()
   .reduce((acc, fn) => fn(acc), firstArg)
 
-export const cond = <T = any, S = any>(array: Array<CondItem<S>>) => (item: T) => {
+export const cond = <T = any, S = any>(array: Array<CondItem<T, S>>) => (item: T) => {
     const matchedTuple = array.find(([condition, _]) => condition(item))
 
     if (matchedTuple) {
