@@ -40,3 +40,4 @@ npm and yarn will be added soon :)
 |clearObject     |`(subject: {[key: string]: any})`                    |clears object from nullable or undefined values
 |values          |`<T extends {}>(subject: {[key: string]: any})`      |returns object's values as Array
 |is              |`(type: any, subject: any)`                          |validates if give value has provided type
+|all             |`(Array<boolean>)`                                   |check if all passed arguments are truth
