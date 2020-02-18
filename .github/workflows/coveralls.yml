@@ -1,4 +1,4 @@
-on: ["push", "pull_request"]
+on: ["push"]
 
 name: Test Coveralls
 
@@ -15,7 +15,7 @@ jobs:
       run: yarn
     
     - name: test
-      run: jest --coverage
+      run: yarn test:cov
 
     - name: Coveralls
       uses: coverallsapp/github-action@master
