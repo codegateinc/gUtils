@@ -1,7 +1,7 @@
 import { all } from '../utils'
 
 describe('all', () => {
-    it('should return true if every condition are correct', () => {
+    it('should return true if every condition is correct', () => {
         expect(all(
             true,
             Boolean(10),
@@ -9,7 +9,7 @@ describe('all', () => {
         )).toEqual(true)
     })
 
-    it('should return false if one of arguments return false', () => {
+    it('if one of the arguments is falsy', () => {
         expect(all(
             false,
             Boolean(10),
