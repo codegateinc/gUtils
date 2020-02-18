@@ -3,7 +3,7 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -11,7 +11,7 @@
     "precommit": "concurrently 'tsc' 'yarn test' 'yarn build' 'yarn updateVersion' && git add dist package.json",
     "build": "rm -rf dist && babel ./src --out-dir dist --extensions \".ts\" --no-copy-ignored",
     "updateVersion": "yarn version --patch --no-git-tag-version",
-    "test:cov": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test-coverage": "jest --coverage"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
