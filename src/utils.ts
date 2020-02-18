@@ -1,4 +1,5 @@
 import { KeyValuePair, CondItem } from './types'
+import { equals as isEqual } from './helpers'
 
 export const compose = (...functions: Array<Function>) => (firstArg?: any) => functions
   .reverse()
@@ -45,3 +46,5 @@ export const clearObject = (subject: KeyValuePair) => compose(
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
 
 export const is = (type: any, subject: any) => subject.constructor.name === type.name
+
+export const equals = (arg1: any, arg2: any) => isEqual(arg1, arg2)
