@@ -1,1 +1,0 @@
-export { equals } from './equals'
