@@ -10,8 +10,13 @@ var _utils = require("../utils");
 const compareObjects = (obj1, obj2) => {
   const obj1Length = (0, _utils.values)(obj1).length;
   const obj2Length = (0, _utils.values)(obj2).length;
-  const subject1 = obj1Length > obj2Length ? (0, _utils.toPairs)(obj1) : (0, _utils.toPairs)(obj2);
-  const subject2 = obj1Length > obj2Length ? (0, _utils.toPairs)(obj2) : (0, _utils.toPairs)(obj1);
+
+  if (obj1Length !== obj2Length) {
+    return false;
+  }
+
+  const subject1 = (0, _utils.toPairs)(obj1);
+  const subject2 = (0, _utils.toPairs)(obj2);
   return subject1.every(([key, sub1], index) => {
     const [field] = subject2.filter(([sub2Key]) => sub2Key === key);
 
@@ -34,14 +39,16 @@ const compareObjects = (obj1, obj2) => {
 };
 
 const compareArrays = (arr1, arr2) => {
-  const array1 = arr1.length > arr2.length ? arr1 : arr2;
-  const array2 = arr1.length > arr2.length ? arr2 : arr1;
-  return array1.every((arrItem, index) => {
-    if ((0, _utils.is)(Object, arrItem) && array2[index]) {
-      return compareObjects(array1, array2[index]);
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  return arr1.every((arrItem, index) => {
+    if ((0, _utils.is)(Object, arrItem) && arr2[index]) {
+      return compareObjects(arr1, arr2[index]);
     }
 
-    return array2[index] === arrItem;
+    return arr2[index] === arrItem;
   });
 };
 

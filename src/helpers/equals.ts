@@ -3,8 +3,13 @@ import { toPairs, values, is } from '../utils'
 const compareObjects = (obj1: Object, obj2: Object) => {
     const obj1Length = values(obj1).length
     const obj2Length = values(obj2).length
-    const subject1 = obj1Length > obj2Length ? toPairs(obj1) : toPairs(obj2)
-    const subject2 = obj1Length > obj2Length ? toPairs(obj2) : toPairs(obj1)
+
+    if (obj1Length !== obj2Length) {
+        return false
+    }
+
+    const subject1 = toPairs(obj1)
+    const subject2 = toPairs(obj2)
 
     return subject1
         .every(([key, sub1], index) => {
@@ -31,16 +36,17 @@ const compareObjects = (obj1: Object, obj2: Object) => {
 }
 
 const compareArrays = (arr1: [], arr2: []) => {
-    const array1 = arr1.length > arr2.length ? arr1 : arr2
-    const array2 = arr1.length > arr2.length ? arr2 : arr1
+    if (arr1.length !== arr2.length) {
+        return false
+    }
 
-    return array1
+    return arr1
         .every((arrItem, index) => {
-            if (is(Object, arrItem) && array2[index]) {
-                return compareObjects(array1, array2[index])
+            if (is(Object, arrItem) && arr2[index]) {
+                return compareObjects(arr1, arr2[index])
             }
 
-            return array2[index] === arrItem
+            return arr2[index] === arrItem
         })
 }
 
