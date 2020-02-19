@@ -1,14 +1,10 @@
-import { toPairs, values } from '../utils'
+import { toPairs, values, is } from '../utils'
 
 const compareObjects = (obj1: Object, obj2: Object) => {
-    const arg1Length = values(obj1).length
-    const arg2Length = values(obj2).length
-    const subject1 = arg1Length > arg2Length
-        ? toPairs(obj1)
-        : toPairs(obj2)
-    const subject2 = arg1Length > arg2Length
-        ? toPairs(obj2)
-        : toPairs(obj1)
+    const obj1Length = values(obj1).length
+    const obj2Length = values(obj2).length
+    const subject1 = obj1Length > obj2Length ? toPairs(obj1) : toPairs(obj2)
+    const subject2 = obj1Length > obj2Length ? toPairs(obj2) : toPairs(obj1)
 
     return subject1
         .every(([key, sub1], index) => {
@@ -20,7 +16,7 @@ const compareObjects = (obj1: Object, obj2: Object) => {
 
             const [, sub2] = field
 
-            if ((sub2 && sub1) && (typeof sub2 === 'object' && typeof sub1 === 'object')) {
+            if ((sub2 && sub1) && is(Object, sub2) && is(Object, sub1)) {
                 return compareObjects(sub2, sub1)
             }
 
@@ -35,34 +31,28 @@ const compareObjects = (obj1: Object, obj2: Object) => {
 }
 
 const compareArrays = (arr1: [], arr2: []) => {
-    const arr1Length = arr1.length
-    const arr2Length = arr2.length
-    const array1 = arr1Length > arr2Length
-        ? arr1
-        : arr2
-    const array2 = arr1Length > arr2Length
-        ? arr2
-        : arr1
+    const array1 = arr1.length > arr2.length ? arr1 : arr2
+    const array2 = arr1.length > arr2.length ? arr2 : arr1
 
     return array1
         .every((arrItem, index) => {
-            if (typeof arrItem === 'object' && array2[index]) {
+            if (is(Object, arrItem) && array2[index]) {
                 return compareObjects(array1, array2[index])
             }
 
-            return array2.includes(arrItem)
+            return array2[index] === arrItem
         })
 }
 
 export const equals = (arg1: any, arg2: any) => {
     switch (true) {
-        case typeof arg1 === 'string' && typeof arg2 === 'string':
+        case is(String, arg1) && is(String, arg2):
             return arg1 === arg2
-        case typeof arg1 === 'number' && typeof arg2 === 'number':
+        case is(Number, arg1) && is(Number, arg2):
             return arg1 === arg2
-        case typeof arg1 === 'boolean' && typeof arg2 === 'boolean':
+        case is(Boolean, arg1) && is(Boolean, arg2):
             return arg1 === arg2
-        case typeof arg1 === 'object' && typeof arg2 === 'object':
+        case is(Object, arg1) && is(Object, arg2):
             return compareObjects(arg1, arg2)
         case Array.isArray(arg1) && Array.isArray(arg2):
             return compareArrays(arg1, arg2)

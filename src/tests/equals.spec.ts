@@ -1,4 +1,4 @@
-import { equals } from '../helpers/equals'
+import { equals } from '../helpers'
 
 describe('equals', () => {
     it('should return true', () => {
