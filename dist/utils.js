@@ -70,6 +70,6 @@ const values = subject => Object.values(subject);
 
 exports.values = values;
 
-const is = (type, subject) => subject.constructor.name === type.name;
+const is = (type, subject) => subject.constructor === type || subject instanceof type;
 
 exports.is = is;
