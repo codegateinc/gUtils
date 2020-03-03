@@ -3,8 +3,9 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "main": "dist/index.js",
+  "description": "This library is a package of useful functions",
   "scripts": {
     "test": "jest",
     "tsc": "node node_modules/typescript/bin/tsc",
@@ -40,5 +41,9 @@
     "collectCoverageFrom": [
       "src/**/*.ts?(x)"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/codegateinc/gUtils/issues"
+  },
+  "homepage": "https://github.com/codegateinc/gUtils#readme"
 }
