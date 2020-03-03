@@ -10,10 +10,6 @@ Just simply run in console
 
 `yarn add @codegateinc/g-utils` or `npm install @codegateinc/g-utils`
 
-and that's it
-
-npm and yarn will be added soon :)
-
 ## Usage
 
 ```
