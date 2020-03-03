@@ -6,10 +6,9 @@ gUtils is a javascript library that contains functions to make your life simpler
 
 ## Installation
 
-For now you have to add this library inline in your `package.json` by:<br>
-```
-    "gUtils": "https://github.com/codegateinc/gUtils.git"
-```
+Just simply run in console 
+
+`yarn add @codegateinc/g-utils` or `npm install @codegateinc/g-utils`
 
 and that's it
 
