@@ -1,7 +1,7 @@
 import { compareFunctions } from '../utils'
 
 describe('compareFunctions', () => {
-    it('should return true', () => {
+    it('should return true when functions are equal', () => {
         const fn1 = () => {}
         const fn2 = () => {}
 
@@ -20,7 +20,7 @@ describe('compareFunctions', () => {
         expect(compareFunctions(fn7, fn8)).toBeTruthy()
     })
 
-    it('should return false', () => {
+    it('should return false when functions are not equal', () => {
         const fn1 = () => {}
         const fn2 = () => []
 
