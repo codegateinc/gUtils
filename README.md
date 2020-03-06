@@ -37,3 +37,4 @@ Just simply run in console
 |is              |`(type: any, subject: any)`                          |validates if give value has provided type
 |all             |`(Array<boolean>)`                                   |check if all passed arguments are truthy
 |hasElements     |`(subject: any): boolean`                            |check if given value is array and has got any elemnts
+|compareFunctions|`(a: Function, b: Function): boolean`                |check if given functions are the same
