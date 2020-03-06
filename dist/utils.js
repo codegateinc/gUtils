@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.is = exports.values = exports.clearObject = exports.fromPairs = exports.toPairs = exports.all = exports.hasElements = exports.hasKeys = exports.always = exports.T = exports.call = exports.ifDefined = exports.isDefined = exports.cond = exports.compose = void 0;
+exports.compareFunctions = exports.is = exports.values = exports.clearObject = exports.fromPairs = exports.toPairs = exports.all = exports.hasElements = exports.hasKeys = exports.always = exports.T = exports.call = exports.ifDefined = exports.isDefined = exports.cond = exports.compose = void 0;
 
 const compose = (...functions) => firstArg => functions.reverse().reduce((acc, fn) => fn(acc), firstArg);
 
@@ -73,3 +73,7 @@ exports.values = values;
 const is = (type, subject) => subject.constructor === type || subject instanceof type;
 
 exports.is = is;
+
+const compareFunctions = (a, b) => a.toString() === b.toString();
+
+exports.compareFunctions = compareFunctions;

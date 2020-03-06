@@ -45,3 +45,5 @@ export const clearObject = (subject: KeyValuePair) => compose(
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
 
 export const is = (type: any, subject: any) => subject.constructor === type || subject instanceof type
+
+export const compareFunctions = (a: Function, b: Function) => a.toString() === b.toString()
