@@ -58,7 +58,9 @@ const toPairs = subject => Object.entries(subject);
 
 exports.toPairs = toPairs;
 
-const fromPairs = subject => Object.fromEntries(subject);
+const fromPairs = subject => subject.reduce((acc, [key, value]) => ({ ...acc,
+  [key]: value
+}), {});
 
 exports.fromPairs = fromPairs;
 
