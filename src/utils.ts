@@ -34,7 +34,10 @@ export const hasElements = (subject: any) => Array.isArray(subject)
 export const all = (...args: Array<boolean>) => !args.some(arg => !Boolean(arg))
 
 export const toPairs = <T extends {}>(subject: KeyValuePair) => Object.entries<T>(subject)
-export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => Object.fromEntries(subject)
+export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => subject.reduce((acc, [key, value]) => ({
+    ...acc,
+    [key]: value
+}), {} as T)
 
 export const clearObject = (subject: KeyValuePair) => compose(
   fromPairs,
