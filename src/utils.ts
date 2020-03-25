@@ -42,7 +42,7 @@ export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => sub
 export const clearObject = (subject: KeyValuePair) => compose(
   fromPairs,
   subject => toPairs(subject)
-    .filter(([_ ,value]) => isDefined(value))
+    .filter(([_ ,value]) => isDefined(value) && value !== '')
 )(subject)
 
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)

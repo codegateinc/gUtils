@@ -64,7 +64,7 @@ const fromPairs = subject => subject.reduce((acc, [key, value]) => ({ ...acc,
 
 exports.fromPairs = fromPairs;
 
-const clearObject = subject => compose(fromPairs, subject => toPairs(subject).filter(([_, value]) => isDefined(value)))(subject);
+const clearObject = subject => compose(fromPairs, subject => toPairs(subject).filter(([_, value]) => isDefined(value) && value !== ''))(subject);
 
 exports.clearObject = clearObject;
 

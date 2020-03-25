@@ -44,4 +44,24 @@ describe('clearObject', () => {
 
         expect(clearObject(arg1)).toEqual(arg1)
     })
+
+    it('should clear empty string', () => {
+        const arg1 = {
+            str1: '',
+            str2: 'Test'
+        }
+
+        expect(clearObject(arg1)).toEqual({
+            str2: 'Test'
+        })
+    })
+
+    it('should not clear zeros', () => {
+        const arg1 = {
+            str1: 1,
+            str2: 0
+        }
+
+        expect(clearObject(arg1)).toEqual(arg1)
+    })
 })
