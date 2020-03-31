@@ -50,3 +50,19 @@ export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(
 export const is = (type: any, subject: any) => subject.constructor === type || subject instanceof type
 
 export const compareFunctions = (a: Function, b: Function) => a.toString() === b.toString()
+
+export const isEmpty = (subject: any) => {
+    if (subject && Array.isArray(subject)) {
+        return subject.length === 0
+    }
+
+    if (subject && is(Object, subject)) {
+        return !hasKeys(subject)
+    }
+
+    if (subject && is(String, subject)) {
+        return subject === ''
+    }
+
+    return true
+}

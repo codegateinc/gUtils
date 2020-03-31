@@ -16,5 +16,6 @@ export namespace G {
   export function cond<T = any, S = any>(array: Array<CondItem<T, S>>): (item: T) => S
   export function hasElements(subject: any): boolean
   export function all(...args: Array<boolean>): boolean
-  export function compareFunctions(a: Function, b: Function): boolean;
+  export function compareFunctions(a: Function, b: Function): boolean
+  export function isEmpty(subject: any): boolean
 }
