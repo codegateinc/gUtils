@@ -66,3 +66,7 @@ export const isEmpty = (subject: any) => {
 
     return true
 }
+
+export const splitEvery = <T>(limit: number, collection: Array<T> | string) => Array
+    .from(new Array(Math.ceil(collection.length / limit)))
+    .map((_, index) => collection.slice(index * limit, limit * (index + 1)))
