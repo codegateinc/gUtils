@@ -3,7 +3,7 @@
   "author": "@codegate",
   "license": "MIT",
   "typings": "index.d.ts",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "main": "dist/index.js",
   "description": "This library is a package of useful functions",
   "scripts": {

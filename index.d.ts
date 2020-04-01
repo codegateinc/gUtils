@@ -18,5 +18,5 @@ export namespace G {
   export function all(...args: Array<boolean>): boolean
   export function compareFunctions(a: Function, b: Function): boolean
   export function isEmpty(subject: any): boolean
-  export function splitEvery<T = [] | string>(limit: number, collection: T): T[][]
+  export function splitEvery<T = [] | string>(limit: number, collection: T): T[]
 }
