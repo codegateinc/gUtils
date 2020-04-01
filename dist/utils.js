@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isEmpty = exports.compareFunctions = exports.is = exports.values = exports.clearObject = exports.fromPairs = exports.toPairs = exports.all = exports.hasElements = exports.hasKeys = exports.always = exports.T = exports.call = exports.ifDefined = exports.isDefined = exports.cond = exports.compose = void 0;
+exports.splitEvery = exports.isEmpty = exports.compareFunctions = exports.is = exports.values = exports.clearObject = exports.fromPairs = exports.toPairs = exports.all = exports.hasElements = exports.hasKeys = exports.always = exports.T = exports.call = exports.ifDefined = exports.isDefined = exports.cond = exports.compose = void 0;
 
 const compose = (...functions) => firstArg => functions.reverse().reduce((acc, fn) => fn(acc), firstArg);
 
@@ -97,3 +97,7 @@ const isEmpty = subject => {
 };
 
 exports.isEmpty = isEmpty;
+
+const splitEvery = (limit, collection) => Array.from(new Array(Math.ceil(collection.length / limit))).map((_, index) => collection.slice(index * limit, limit * (index + 1)));
+
+exports.splitEvery = splitEvery;
