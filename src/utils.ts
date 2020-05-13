@@ -33,11 +33,11 @@ export const hasElements = (subject: any) => Array.isArray(subject)
 
 export const all = (...args: Array<boolean>) => !args.some(arg => !Boolean(arg))
 
-export const toPairs = <T extends {}>(subject: KeyValuePair) => Object.entries<T>(subject)
-export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => subject.reduce((acc, [key, value]) => ({
+export const toPairs = <T extends {}>(subject: KeyValuePair) => subject !== null ?  Object.entries<T>(subject) : []
+export const fromPairs = <T extends {}>(subject: Array<[string, any]>): T => subject !== null ? subject.reduce((acc, [key, value]) => ({
     ...acc,
     [key]: value
-}), {} as T)
+}), {} as T) : {} as T
 
 export const clearObject = (subject: KeyValuePair) => compose(
   fromPairs,
@@ -47,7 +47,7 @@ export const clearObject = (subject: KeyValuePair) => compose(
 
 export const values = <T extends {}>(subject: KeyValuePair) => Object.values<T>(subject)
 
-export const is = (type: any, subject: any) => subject.constructor === type || subject instanceof type
+export const is = (type: any, subject: any) => subject !== null ? subject.constructor === type || subject instanceof type : false
 
 export const compareFunctions = (a: Function, b: Function) => a.toString() === b.toString()
 

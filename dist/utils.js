@@ -54,13 +54,13 @@ const all = (...args) => !args.some(arg => !Boolean(arg));
 
 exports.all = all;
 
-const toPairs = subject => Object.entries(subject);
+const toPairs = subject => subject !== null ? Object.entries(subject) : [];
 
 exports.toPairs = toPairs;
 
-const fromPairs = subject => subject.reduce((acc, [key, value]) => ({ ...acc,
+const fromPairs = subject => subject !== null ? subject.reduce((acc, [key, value]) => ({ ...acc,
   [key]: value
-}), {});
+}), {}) : {};
 
 exports.fromPairs = fromPairs;
 
@@ -72,7 +72,7 @@ const values = subject => Object.values(subject);
 
 exports.values = values;
 
-const is = (type, subject) => subject.constructor === type || subject instanceof type;
+const is = (type, subject) => subject !== null ? subject.constructor === type || subject instanceof type : false;
 
 exports.is = is;
 
